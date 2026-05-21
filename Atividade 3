@@ -1,0 +1,29 @@
+#include "raylib.h"
+
+int main()
+{
+    int posX = 0;  
+    InitWindow(800, 450, "Quadrado Animado");
+
+    while (!WindowShouldClose())
+    {
+        posX++;
+        if (posX > 800)
+    {
+    posX = 0;
+    }
+
+        BeginDrawing();
+
+        ClearBackground(RAYWHITE);
+
+        DrawRectangle(posX, 100, 300, 100, BLUE);
+        DrawRectangle(posX, 250, 300, 100, RED);
+
+        EndDrawing();
+    }
+
+    CloseWindow();
+
+    return 0;
+}
