@@ -1,0 +1,30 @@
+#include "raylib.h"
+
+int main()
+{
+    InitWindow(800, 450, "Casinha");
+
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+
+        ClearBackground(RAYWHITE);
+
+        DrawRectangle(300, 200, 250, 200, GREEN);
+        DrawTriangle(
+            (Vector2){300, 200},
+            (Vector2){550, 200},
+            (Vector2){425, 100},
+            YELLOW
+        );
+        DrawRectangle(395, 270, 60, 124, BLUE);
+        DrawRectangle(330, 230, 40, 40, SKYBLUE);
+        DrawRectangle(480, 230, 40, 40, SKYBLUE);
+
+        EndDrawing();
+    }
+
+    CloseWindow();
+
+    return 0;
+}
