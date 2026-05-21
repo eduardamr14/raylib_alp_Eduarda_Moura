@@ -1,0 +1,52 @@
+#include "raylib.h"
+
+int main()
+{
+    float posX = -100; 
+
+    Texture2D sprite;
+
+    Sound sound; 
+    
+    
+
+    InitWindow(800, 450, "Criando Sons do Jogo");
+
+    InitAudioDevice(); 
+
+    sprite = LoadTexture("luvaboxe.png");
+
+    sound = LoadSound("fundo.ogg"); 
+   
+    
+
+    while (!WindowShouldClose())
+    {
+        posX += GetFrameTime() * 300;
+
+       
+        if (posX > 800)
+        {
+            posX = -100;
+
+            PlaySound(sound);
+            
+        }
+
+        BeginDrawing();
+
+        ClearBackground(RAYWHITE);
+
+        DrawTexture(sprite, posX, 70, WHITE);
+
+        EndDrawing();
+    }
+
+    UnloadSound(sound);
+
+    CloseAudioDevice();
+
+    CloseWindow();
+
+    return 0;
+}
