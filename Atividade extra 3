@@ -1,0 +1,35 @@
+#include "raylib.h"
+
+int main()
+{
+    int blueX = 0;  
+    int redX = 700;
+    InitWindow(800, 450, "Dois Quadrados");
+
+    while (!WindowShouldClose())
+    {
+        blueX++;
+        redX--;
+        if (blueX > 800)
+    {
+    blueX = 0;
+    }
+        if(redX < -100)
+    {
+        redX = 800;
+    }
+
+        BeginDrawing();
+
+        ClearBackground(RAYWHITE);
+
+        DrawRectangle(blueX, 100, 300, 100, BLUE);
+        DrawRectangle(redX, 250, 300, 100, RED);
+
+        EndDrawing();
+    }
+
+    CloseWindow();
+
+    return 0;
+}
