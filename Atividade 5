@@ -1,0 +1,31 @@
+#include "raylib.h"
+
+int main()
+{
+    Texture2D sprite; 
+    Texture2D sprite2;
+   
+
+    InitWindow(800, 450, "Meu Primeiro Personagem");
+
+    sprite = LoadTexture("inimigo.png");  
+    sprite2 = LoadTexture("luvaboxe.png"); 
+  
+
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+
+        ClearBackground(RAYWHITE);
+
+        DrawTexture(sprite, 250, 80, WHITE);
+        DrawTexture(sprite2, 300, 100, WHITE);
+      
+
+        EndDrawing();
+    }
+
+    CloseWindow();
+
+    return 0;
+}
